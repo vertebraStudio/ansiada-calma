@@ -277,30 +277,6 @@ document.addEventListener('DOMContentLoaded', function() {
      window.addEventListener('load', function() {
          document.body.classList.add('loaded');
      });
-
-     // WhatsApp button functionality
-     const whatsappButton = document.querySelector('.whatsapp-link');
-     
-     if (whatsappButton) {
-         whatsappButton.addEventListener('click', function(e) {
-             e.preventDefault();
-             
-             // Add click animation
-             this.style.transform = 'scale(0.9)';
-             setTimeout(() => {
-                 this.style.transform = 'scale(1.1)';
-             }, 150);
-             
-             // Show notification (placeholder for future WhatsApp Business integration)
-             showNotification('Próximamente: Conexión directa con WhatsApp Business', 'info');
-             
-             // For now, you can replace this with the actual WhatsApp Business link
-             // const phoneNumber = '34666666666'; // Replace with actual number
-             // const message = 'Hola, me gustaría obtener más información sobre sus servicios de terapia.';
-             // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-             // window.open(whatsappUrl, '_blank');
-         });
-     }
  });
 
 // Utility functions
