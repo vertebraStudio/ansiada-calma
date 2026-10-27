@@ -1790,6 +1790,594 @@ html {
     }
 }
 
+/* Sesión única: página propia, enlace del menú y anuncio en inicio */
+.nav-badge {
+    background-color: #e91e63;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.45rem;
+    border-radius: 10px;
+    line-height: 1.3;
+}
+
+.su-eyebrow {
+    display: inline-block;
+    background-color: #fce4ec;
+    color: #c2185b;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+}
+
+.su-hero {
+    padding: 9rem 0 5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fdf5f8 100%);
+}
+
+.su-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.su-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+}
+
+.su-hero h1 span {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.su-lead {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #2c3e50;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.su-hero-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 1.75rem;
+}
+
+.su-facts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.su-facts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #495057;
+    line-height: 1.4;
+}
+
+.su-facts i {
+    color: #e91e63;
+    font-size: 1.15rem;
+    width: 1.4rem;
+    text-align: center;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.su-facts strong {
+    color: #2c3e50;
+}
+
+.su-btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.su-btn-whatsapp i {
+    font-size: 1.35rem;
+}
+
+.su-cta-note {
+    margin-top: 0.85rem;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.su-cta-note a {
+    color: #2c3e50;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.su-cta-note a:hover {
+    color: #e91e63;
+    text-decoration: underline;
+}
+
+.su-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 30% 50%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.sesion-unica-page .terapia-breve {
+    padding-top: 7rem;
+}
+
+.sesion-unica-page .situaciones-comunes h2 {
+    margin-bottom: 1rem;
+}
+
+.su-section {
+    padding: 6rem 0 5rem 0;
+    background-color: #ffffff;
+}
+
+.su-section--gray {
+    background-color: #f8f9fa;
+}
+
+.su-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+.su-faq {
+    margin-top: 2.5rem;
+}
+
+.su-section-sub {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+}
+
+.su-note {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #495057;
+    max-width: 720px;
+    margin: 3rem auto 0;
+}
+
+.su-steps {
+    background-color: #ffffff;
+}
+
+.su-step-number {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.su-example {
+    max-width: 860px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    border-left: 5px solid #e91e63;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 2.5rem;
+}
+
+.su-example-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.su-example-row:last-child {
+    border-bottom: none;
+}
+
+.su-example-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #c2185b;
+    padding-top: 0.25rem;
+}
+
+.su-example-row p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+}
+
+.su-pricing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.su-price-card {
+    background-color: white;
+    border-radius: 15px;
+    border-top: 5px solid #e91e63;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+}
+
+.su-price-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #c2185b;
+}
+
+.su-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.su-price-amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1;
+}
+
+.su-price-unit {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.su-price-card .terapia-lista {
+    margin: 0 0 2rem;
+}
+
+.su-price-card .terapia-lista li {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+.su-price-card .btn-primary {
+    width: 100%;
+}
+
+.su-modalidades {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.su-modalidad {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+.su-modalidad h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.su-modalidad p {
+    color: #495057;
+    line-height: 1.7;
+}
+
+.su-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    color: #c2185b;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.su-link:hover {
+    text-decoration: underline;
+}
+
+.su-fit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.su-fit-col {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 2.5rem;
+}
+
+.su-fit-col h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.su-fit-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.su-fit-list li {
+    position: relative;
+    padding: 1rem 0 1rem 2rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.su-fit-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.su-fit-list a {
+    color: #c2185b;
+    font-weight: 600;
+}
+
+details.faq-item > summary {
+    list-style: none;
+}
+
+details.faq-item > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.faq-item[open] .faq-toggle {
+    transform: rotate(180deg);
+}
+
+details.faq-item .faq-answer {
+    max-height: none;
+    padding: 1.5rem 2rem 2rem;
+}
+
+details.faq-item > summary:focus-visible {
+    outline: 2px solid #e91e63;
+    outline-offset: -2px;
+}
+
+.sesion-unica-page .contact {
+    background-color: #ffffff;
+}
+
+.su-contact h2 {
+    margin-bottom: 1rem;
+}
+
+.su-contact .su-section-sub {
+    margin-bottom: 2rem;
+}
+
+.su-contact-cta {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+/* Anuncio de la sesión única en la página de inicio */
+.su-announce {
+    padding: 0 0 5rem;
+    background-color: #ffffff;
+}
+
+.su-announce-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+    background: linear-gradient(135deg, #fdf2f6 0%, #fffaf0 100%);
+    border: 1px solid #f8bbd9;
+    border-radius: 15px;
+    padding: 2.5rem 3rem;
+}
+
+.su-announce-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.su-announce-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #495057;
+    max-width: 640px;
+    margin-bottom: 1.25rem;
+}
+
+.su-announce-facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+}
+
+.su-announce-facts li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.su-announce-facts i {
+    color: #e91e63;
+}
+
+@media (max-width: 768px) {
+    .su-hero {
+        padding: 7.5rem 0 3.5rem;
+    }
+
+    .su-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .su-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .su-hero h1 span {
+        font-size: 1.25rem;
+    }
+
+    .su-lead {
+        font-size: 1.2rem;
+    }
+
+    .su-hero-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .su-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .su-cta .btn-primary {
+        width: 100%;
+    }
+
+    .su-hero-image img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .sesion-unica-page .terapia-breve {
+        padding-top: 5rem;
+    }
+
+    .su-section {
+        padding: 4rem 0 3.5rem 0;
+    }
+
+    .su-section h2 {
+        font-size: 2rem;
+    }
+
+    .su-example {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .su-example-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .su-pricing,
+    .su-fit {
+        grid-template-columns: 1fr;
+    }
+
+    .su-price-card,
+    .su-fit-col {
+        padding: 2rem 1.5rem;
+    }
+
+    .su-modalidad {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    details.faq-item .faq-answer {
+        padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .su-announce {
+        padding-bottom: 3.5rem;
+    }
+
+    .su-announce-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .su-announce-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .su-announce-card .btn-primary {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .su-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .su-btn-whatsapp {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .su-section h2 {
+        font-size: 1.75rem;
+    }
+}
+
+.faq-answer a {
+    color: #c2185b;
+}
+
 /* Menú: el menú completo no cabe en tablet.
    Hamburguesa hasta 1024px (mismas reglas que el bloque de 768px) y menú compacto hasta 1199px */
 @media (min-width: 1025px) and (max-width: 1199px) {
