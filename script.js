@@ -18,12 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight;
                 
-                // Add a subtle visual feedback
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-                
                 // Smooth scroll with easing
                 const startPosition = window.pageYOffset;
                 const distance = targetPosition - startPosition;
@@ -46,15 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 requestAnimationFrame(animation);
-                
-                // Add highlight effect to target section
-                setTimeout(() => {
-                    targetSection.style.transition = 'box-shadow 0.5s ease';
-                    targetSection.style.boxShadow = '0 0 30px rgba(233, 30, 99, 0.3)';
-                    setTimeout(() => {
-                        targetSection.style.boxShadow = 'none';
-                    }, 2000);
-                }, 1000);
             }
         });
     });
@@ -62,15 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header background change on scroll
     const header = document.querySelector('.header');
     
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.style.backgroundColor = 'rgba(248, 249, 250, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.backgroundColor = '#f8f9fa';
-            header.style.backdropFilter = 'none';
-        }
-    }, { passive: true });
+    const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
 
     // Form submission handling
     const contactForm = document.querySelector('.contact-form');

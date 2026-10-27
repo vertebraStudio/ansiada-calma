@@ -1,3 +1,24 @@
+:root {
+    --navy: #1D3250;
+    --navy-soft: #2B4569;
+    --text: #48525E;
+    --muted: #646C79;
+    --cream: #F4EEE5;
+    --cream-light: #FAF7F2;
+    --line: #E7E0D5;
+    --line-strong: #D6CDBF;
+    --pink: #DB2D6E;
+    --pink-deep: #B8185A;
+    --pink-line: #EC9DBC;
+    --pink-soft: #F6C1D6;
+    --pink-tint: #FBEAF1;
+    --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+    --radius: 18px;
+    --shadow-soft: 0 1px 2px rgba(29, 50, 80, 0.04), 0 10px 30px rgba(29, 50, 80, 0.06);
+    --shadow-hover: 0 2px 4px rgba(29, 50, 80, 0.05), 0 18px 40px rgba(29, 50, 80, 0.1);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -8,7 +29,7 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #2c3e50;
+    color: var(--navy);
     background-color: #ffffff;
 }
 
@@ -20,14 +41,14 @@ body {
 
 /* Header */
 .header {
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
     padding: 1rem 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(29, 50, 80, 0.1);
 }
 
 .header-content {
@@ -51,13 +72,13 @@ body {
     display: block;
     font-size: 1.8rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 0.1rem;
 }
 
 .logo-text p {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: var(--muted);
     font-weight: 400;
 }
 
@@ -90,13 +111,13 @@ body {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: var(--navy);
     cursor: pointer;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--navy);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -106,7 +127,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #e91e63;
+    color: var(--pink);
 }
 
 .social-icons {
@@ -115,17 +136,17 @@ body {
 }
 
 .social-icon {
-    color: #6c757d;
+    color: var(--muted);
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #e91e63;
+    color: var(--pink);
 }
 
 .btn-contacto {
-    background-color: #2c3e50;
+    background-color: var(--navy);
     color: white;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
@@ -135,7 +156,7 @@ body {
 }
 
 .btn-contacto:hover {
-    background-color: #e91e63;
+    background-color: var(--pink);
 }
 
 /* Hero Section */
@@ -168,20 +189,20 @@ body {
 .hero-title {
     font-size: 4rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 2rem;
     line-height: 1.4;
 }
 
 .btn-primary {
-    background-color: #2c3e50;
+    background-color: var(--navy);
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -195,16 +216,16 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #34495e;
+    background-color: var(--navy-soft);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(29, 50, 80, 0.1);
 }
 
 /* Info Bar */
 .info-bar {
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
     padding: 2rem 0;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid var(--line);
 }
 
 .info-items {
@@ -220,12 +241,12 @@ body {
     justify-content: center;
     gap: 1rem;
     font-weight: 500;
-    color: #2c3e50;
+    color: var(--navy);
 }
 
 .info-item i {
     font-size: 1.5rem;
-    color: #e91e63;
+    color: var(--pink);
 }
 
  /* Terapia Breve Section */
@@ -248,7 +269,7 @@ body {
      transform: translateX(-50%);
      width: 100px;
      height: 3px;
-     background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+     background: var(--pink-line);
      border-radius: 2px;
  }
 
@@ -256,7 +277,7 @@ body {
  .terapia-title h2 {
      font-size: 3.5rem;
      font-weight: 700;
-     color: #2c3e50;
+     color: var(--navy);
      line-height: 1.1;
      margin: 0;
  }
@@ -291,21 +312,21 @@ body {
 .terapia-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #495057;
+    color: var(--text);
     margin-bottom: 2rem;
 }
 
 /* Situaciones Comunes Section */
 .situaciones-comunes {
     padding: 6rem 0 5rem 0;
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
 }
 
 .situaciones-comunes h2 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 3rem;
 }
 
@@ -319,25 +340,25 @@ body {
     background-color: white;
     padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(29, 50, 80, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 15px 30px rgba(29, 50, 80, 0.12);
 }
 
 .card h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .card p {
-    color: #495057;
+    color: var(--text);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -358,14 +379,14 @@ body {
 .sobre-text h2 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 2rem;
 }
 
 .sobre-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #495057;
+    color: var(--text);
     margin-bottom: 2rem;
 }
 
@@ -379,7 +400,7 @@ body {
     border-radius: 15px;
     overflow: hidden;
     margin: 0 auto 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(29, 50, 80, 0.15);
 }
 
 .profile-image img {
@@ -391,13 +412,13 @@ body {
    .profile-name {
       font-size: 1.2rem;
       font-weight: 600;
-      color: #2c3e50;
+      color: var(--navy);
   }
 
   /* Cita Section */
   .cita-section {
       padding: 3rem 0;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, var(--cream-light) 0%, var(--line) 100%);
   }
 
   .cita-content {
@@ -409,7 +430,7 @@ body {
 
   .cita-icon {
       font-size: 2.5rem;
-      color: #e91e63;
+      color: var(--pink);
       margin-bottom: 1.5rem;
       opacity: 0.7;
   }
@@ -417,7 +438,7 @@ body {
   .cita-text {
       font-size: 1.2rem;
       line-height: 1.7;
-      color: #2c3e50;
+      color: var(--navy);
       margin: 0;
       font-style: italic;
   }
@@ -429,27 +450,27 @@ body {
   .cita-text p:last-child {
       margin-bottom: 0;
       font-weight: 600;
-      color: #e91e63;
+      color: var(--pink);
   }
 
   .cita-author {
       margin-top: 1.5rem;
       font-size: 1rem;
-      color: #6c757d;
+      color: var(--muted);
       font-weight: 500;
   }
 
   /* Formación Académica Section */
 .formacion-academica {
     padding: 6rem 0 5rem 0;
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
 }
 
  .formacion-academica h2 {
      text-align: center;
      font-size: 2.5rem;
      font-weight: 600;
-     color: #2c3e50;
+     color: var(--navy);
      margin-bottom: 3rem;
  }
 
@@ -465,7 +486,7 @@ body {
      background-color: white;
      padding: 2rem;
      border-radius: 15px;
-     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+     box-shadow: 0 5px 20px rgba(29, 50, 80, 0.08);
      transition: transform 0.3s ease, box-shadow 0.3s ease;
      display: flex;
      align-items: center;
@@ -474,13 +495,13 @@ body {
 
  .formacion-item:hover {
      transform: translateY(-5px);
-     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+     box-shadow: 0 15px 30px rgba(29, 50, 80, 0.12);
  }
 
  .formacion-icon {
      width: 60px;
      height: 60px;
-     background: linear-gradient(135deg, #e91e63 0%, #f8bbd9 100%);
+     background: linear-gradient(135deg, var(--pink) 0%, var(--pink-soft) 100%);
      border-radius: 50%;
      display: flex;
      align-items: center;
@@ -496,13 +517,13 @@ body {
 .formacion-content h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 0.75rem;
     line-height: 1.3;
 }
 
  .formacion-content .institucion {
-     color: #6c757d;
+     color: var(--muted);
      font-size: 0.95rem;
      font-weight: 500;
      margin: 0;
@@ -517,7 +538,7 @@ body {
 .consulta-photos h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -525,7 +546,7 @@ body {
 .consulta-subtitle {
     text-align: center;
     font-size: 1.1rem;
-    color: #6c757d;
+    color: var(--muted);
     margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
@@ -542,7 +563,7 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(29, 50, 80, 0.1);
     background: #fff;
 }
 
@@ -578,18 +599,18 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(29, 50, 80, 0.1);
 }
 
 .carousel-btn:hover {
     background: rgba(255, 255, 255, 1);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(29, 50, 80, 0.15);
 }
 
 .carousel-btn i {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: var(--navy);
 }
 
 .prev-btn {
@@ -611,18 +632,18 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #ddd;
+    background: var(--line-strong);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .dot.active {
-    background: #e91e63;
+    background: var(--pink);
     transform: scale(1.2);
 }
 
 .dot:hover {
-    background: #e91e63;
+    background: var(--pink);
     opacity: 0.7;
 }
 
@@ -677,14 +698,14 @@ body {
 /* Contact Section */
 .contact {
     padding: 6rem 0 5rem 0;
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
 }
 
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 3rem;
 }
 
@@ -713,24 +734,24 @@ body {
     align-items: flex-start;
     gap: 1rem;
     font-size: 1.1rem;
-    color: #2c3e50;
+    color: var(--navy);
 }
 
 .contact-item i {
     font-size: 1.5rem;
-    color: #e91e63;
+    color: var(--pink);
     width: 30px;
     margin-top: 0.1rem;
 }
 
 .contact-item a {
-    color: #2c3e50;
+    color: var(--navy);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-    color: #e91e63;
+    color: var(--pink);
     text-decoration: underline;
 }
 
@@ -745,7 +766,7 @@ body {
     flex-direction: column;
     gap: 0.3rem;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--muted);
     margin-top: 0.5rem;
 }
 
@@ -764,7 +785,7 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--line);
     border-radius: 10px;
     font-size: 1rem;
     font-family: inherit;
@@ -774,12 +795,12 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #e91e63;
+    border-color: var(--pink);
 }
 
 /* Footer */
 .footer {
-    background-color: #2c3e50;
+    background-color: var(--navy);
     color: white;
     padding: 3rem 0 1rem;
 }
@@ -824,7 +845,7 @@ body {
     color: #95a5a6;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #34495e;
+    border-top: 1px solid var(--navy-soft);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -833,17 +854,17 @@ body {
 }
 
 .designer-credit i {
-    color: #3498db;
+    color: var(--pink-soft);
 }
 
 .designer-link {
-    color: #3498db;
+    color: var(--pink-soft);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .designer-link:hover {
-    color: #2980b9;
+    color: #ffffff;
     text-decoration: underline;
 }
 
@@ -858,7 +879,7 @@ body {
 }
 
 .footer-social .social-icon:hover {
-    color: #e91e63;
+    color: var(--pink);
 }
 
 .footer-bottom {
@@ -879,7 +900,7 @@ body {
 }
 
 .footer-link:hover {
-    color: #3498db;
+    color: var(--pink-soft);
     text-decoration: underline;
 }
 
@@ -903,12 +924,12 @@ body {
         left: 0;
         right: 0;
         background: #ffffff;
-        border-top: 1px solid #e9ecef;
+        border-top: 1px solid var(--line);
         display: none;
         flex-direction: column;
         gap: 0;
         padding: 0.5rem 1rem 1rem;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        box-shadow: 0 8px 20px rgba(29, 50, 80, 0.08);
     }
     .nav-menu.active {
         display: flex;
@@ -1205,7 +1226,7 @@ html {
  .btn-primary:focus-visible,
  .btn-contacto:focus-visible,
  .nav-link:focus-visible {
-     outline: 2px solid #e91e63;
+     outline: 2px solid var(--pink);
      outline-offset: 2px;
  }
  /* Ensure no outline when clicking 'Terapias' trigger */
@@ -1258,19 +1279,19 @@ html {
 
 /* Estilos específicos para la página de depresión */
 .depresion-hero .hero-title {
-    color: #2c3e50;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--navy);
+    text-shadow: 0 2px 4px rgba(29, 50, 80, 0.1);
 }
 
 .depresion-hero .hero-subtitle {
-    color: #2c3e50;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: var(--navy);
+    text-shadow: 0 1px 2px rgba(29, 50, 80, 0.1);
 }
 
 .card-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    background: var(--pink-tint);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1291,14 +1312,14 @@ html {
 
 .card ul li {
     padding: 0.5rem 0;
-    color: #495057;
+    color: var(--text);
     position: relative;
     padding-left: 1.5rem;
 }
 
 .card ul li::before {
     content: '•';
-    color: #FFD700;
+    color: var(--pink);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -1313,7 +1334,7 @@ html {
 
 .terapia-lista li {
     padding: 1rem 0;
-    color: #495057;
+    color: var(--text);
     position: relative;
     padding-left: 2rem;
     line-height: 1.6;
@@ -1321,7 +1342,7 @@ html {
 
 .terapia-lista li::before {
     content: '✓';
-    color: #e91e63;
+    color: var(--pink);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -1330,7 +1351,7 @@ html {
 
 .profile-specialty {
     font-size: 1rem;
-    color: #6c757d;
+    color: var(--muted);
     font-weight: 500;
     margin-top: 0.5rem;
 }
@@ -1342,7 +1363,7 @@ html {
     left: 0;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(29, 50, 80, 0.1);
     padding: 0.5rem 0;
     min-width: 200px;
     opacity: 0;
@@ -1374,15 +1395,15 @@ html {
 .dropdown-menu a {
     display: block;
     padding: 0.75rem 1rem;
-    color: #2c3e50;
+    color: var(--navy);
     text-decoration: none;
     transition: background-color 0.3s ease;
     font-size: 0.9rem;
 }
 
 .dropdown-menu a:hover {
-    background-color: #f8f9fa;
-    color: #e91e63;
+    background-color: var(--cream-light);
+    color: var(--pink);
 }
 
 /* Responsive adjustments for depression page */
@@ -1434,7 +1455,7 @@ html {
     
     .dropdown-menu a {
         padding: 0.5rem 0;
-        border-bottom: 1px solid #e9ecef;
+        border-bottom: 1px solid var(--line);
     }
     
     .dropdown-menu a:last-child {
@@ -1444,15 +1465,15 @@ html {
 
 /* Navegador de Secciones */
 .section-nav {
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
     padding: 2rem 0 1rem 0;
-    border-top: 1px solid #e9ecef;
-    border-bottom: 1px solid #e9ecef;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     margin-top: 40px;
     position: sticky;
     top: 80px;
     z-index: 999;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(29, 50, 80, 0.1);
 }
 
 .section-nav-container {
@@ -1466,7 +1487,7 @@ html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    scrollbar-color: #e91e63 #f8f9fa;
+    scrollbar-color: var(--pink) var(--cream-light);
 }
 
 .section-nav-container::-webkit-scrollbar {
@@ -1474,17 +1495,17 @@ html {
 }
 
 .section-nav-container::-webkit-scrollbar-track {
-    background: #f8f9fa;
+    background: var(--cream-light);
     border-radius: 3px;
 }
 
 .section-nav-container::-webkit-scrollbar-thumb {
-    background: #e91e63;
+    background: var(--pink);
     border-radius: 3px;
 }
 
 .section-nav-container::-webkit-scrollbar-thumb:hover {
-    background: #c2185b;
+    background: var(--pink-deep);
 }
 
 .section-nav-item {
@@ -1495,32 +1516,21 @@ html {
     background-color: white;
     border-radius: 6px;
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--navy);
     font-weight: 500;
     font-size: 0.85rem;
     transition: all 0.3s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e9ecef;
+    box-shadow: 0 1px 4px rgba(29, 50, 80, 0.06);
+    border: 1px solid var(--line);
     flex-shrink: 0;
     white-space: nowrap;
     min-width: fit-content;
 }
 
-.section-nav-item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-    color: #2196F3;
-    border-color: #2196F3;
-}
-
 .section-nav-item i {
     font-size: 1rem;
-    color: #6c757d;
+    color: var(--muted);
     transition: color 0.3s ease;
-}
-
-.section-nav-item:hover i {
-    color: #2196F3;
 }
 
 .section-nav-item span {
@@ -1528,72 +1538,13 @@ html {
 } 
 
 /* Depression page specific styles */
-.depresion-page .card-icon {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-}
-
-.depresion-page .card ul li::before {
-    color: #3498db;
-}
-
-.depresion-page .terapia-title::before {
-    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
-}
 
 /* Pareja page specific styles */
-.pareja-page .btn-primary {
-    background-color: #e91e63;
-    color: white;
-}
-
-.pareja-page .btn-primary:hover {
-    background-color: #c2185b;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
-}
-
-.pareja-page .btn-contacto {
-    background-color: #e91e63;
-    color: white;
-}
-
-.pareja-page .btn-contacto:hover {
-    background-color: #c2185b;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
-}
-
-.pareja-page .card-icon {
-    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-}
-
-.pareja-page .card ul li::before {
-    color: #e91e63;
-}
 
 /* Opositores page specific styles */
-.opositores-page .card-icon {
-    background: linear-gradient(135deg, #2d5a27 0%, #1e3a1a 100%);
-}
-
-.opositores-page .card ul li::before {
-    color: #2d5a27;
-}
-
-.opositores-page .formacion-icon {
-    background: linear-gradient(135deg, #2d5a27 0%, #1e3a1a 100%);
-}
-
-.opositores-page .terapia-title::before {
-    background: linear-gradient(90deg, #2d5a27 0%, #1e3a1a 100%);
-}
 
 .opositores-page .section-nav-container {
     justify-content: center !important;
-}
-
-.pareja-page .terapia-title::before {
-    background: linear-gradient(90deg, #e91e63 0%, #c2185b 100%);
 }
 
 .pareja-page .section-nav-container {
@@ -1605,70 +1556,16 @@ html {
 }
 
 /* Adolescentes page specific styles */
-.adolescentes-page .card-icon {
-    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-}
-
-.adolescentes-page .card ul li::before {
-    color: #f39c12;
-}
-
-.adolescentes-page .formacion-icon {
-    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-}
-
-.adolescentes-page .terapia-title::before {
-    background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
-}
 
 .adolescentes-page .section-nav-container {
     justify-content: center !important;
 }
 
-.pareja-page .section-nav-item:hover {
-    color: #e91e63;
-    border-color: #e91e63;
-}
-
-.pareja-page .section-nav-item:hover i {
-    color: #e91e63;
-}
-
-.pareja-page .formacion-icon {
-    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-}
-
-.pareja-page .info-item i {
-    color: #e91e63;
-}
-
-.pareja-page .terapia-lista li::before {
-    color: #e91e63;
-}
-
 /* Pareja page specific styles - targeting by section ID */
-#situaciones .card-icon {
-    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-}
-
-#situaciones .card ul li::before {
-    color: #e91e63;
-}
 
 /* Pareja page title decoration */
-#que-es-pareja .terapia-title::before {
-    background: linear-gradient(90deg, #e91e63 0%, #c2185b 100%);
-}
 
 /* Pareja page section navigation hover styles */
-.section-nav-item:hover {
-    color: #e91e63 !important;
-    border-color: #e91e63 !important;
-}
-
-.section-nav-item:hover i {
-    color: #e91e63 !important;
-}
 
 /* FAQ Page Styles */
 .faq-content {
@@ -1680,19 +1577,19 @@ html {
     background-color: white;
     border-radius: 12px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(29, 50, 80, 0.08);
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 20px rgba(29, 50, 80, 0.12);
     transform: translateY(-2px);
 }
 
 .faq-question {
     padding: 1.5rem 2rem;
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -1701,13 +1598,13 @@ html {
 }
 
 .faq-question:hover {
-    background-color: #e9ecef;
+    background-color: var(--line);
 }
 
 .faq-question h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin: 0;
     display: flex;
     align-items: center;
@@ -1715,12 +1612,12 @@ html {
 }
 
 .faq-question h3 i {
-    color: #e91e63;
+    color: var(--pink);
     font-size: 1.2rem;
 }
 
 .faq-toggle {
-    color: #6c757d;
+    color: var(--muted);
     font-size: 1rem;
     transition: transform 0.3s ease;
 }
@@ -1743,7 +1640,7 @@ html {
 }
 
 .faq-answer p {
-    color: #495057;
+    color: var(--text);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -1792,7 +1689,7 @@ html {
 
 /* Sesión única: página propia, enlace del menú y anuncio en inicio */
 .nav-badge {
-    background-color: #e91e63;
+    background-color: var(--pink);
     color: white;
     font-size: 0.65rem;
     font-weight: 600;
@@ -1805,8 +1702,8 @@ html {
 
 .su-eyebrow {
     display: inline-block;
-    background-color: #fce4ec;
-    color: #c2185b;
+    background-color: var(--pink-tint);
+    color: var(--pink-deep);
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -1818,7 +1715,7 @@ html {
 
 .su-hero {
     padding: 9rem 0 5rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #fdf5f8 100%);
+    background: linear-gradient(135deg, var(--cream-light) 0%, #fdf5f8 100%);
 }
 
 .su-hero-grid {
@@ -1831,7 +1728,7 @@ html {
 .su-hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--navy);
     line-height: 1.1;
     margin-bottom: 1.25rem;
 }
@@ -1840,14 +1737,14 @@ html {
     display: block;
     font-size: 1.6rem;
     font-weight: 500;
-    color: #6c757d;
+    color: var(--muted);
     margin-top: 0.5rem;
 }
 
 .su-lead {
     font-size: 1.35rem;
     font-weight: 500;
-    color: #2c3e50;
+    color: var(--navy);
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -1855,7 +1752,7 @@ html {
 .su-hero-intro {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #495057;
+    color: var(--text);
     margin-bottom: 1.75rem;
 }
 
@@ -1871,12 +1768,12 @@ html {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    color: #495057;
+    color: var(--text);
     line-height: 1.4;
 }
 
 .su-facts i {
-    color: #e91e63;
+    color: var(--pink);
     font-size: 1.15rem;
     width: 1.4rem;
     text-align: center;
@@ -1885,7 +1782,7 @@ html {
 }
 
 .su-facts strong {
-    color: #2c3e50;
+    color: var(--navy);
 }
 
 .su-btn-whatsapp {
@@ -1902,17 +1799,17 @@ html {
 .su-cta-note {
     margin-top: 0.85rem;
     font-size: 0.95rem;
-    color: #6c757d;
+    color: var(--muted);
 }
 
 .su-cta-note a {
-    color: #2c3e50;
+    color: var(--navy);
     font-weight: 600;
     text-decoration: none;
 }
 
 .su-cta-note a:hover {
-    color: #e91e63;
+    color: var(--pink);
     text-decoration: underline;
 }
 
@@ -1924,7 +1821,7 @@ html {
     object-fit: cover;
     object-position: 30% 50%;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(29, 50, 80, 0.15);
 }
 
 .sesion-unica-page .terapia-breve {
@@ -1941,14 +1838,14 @@ html {
 }
 
 .su-section--gray {
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
 }
 
 .su-section h2 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     line-height: 1.2;
     margin-bottom: 1rem;
     text-wrap: balance;
@@ -1961,7 +1858,7 @@ html {
 .su-section-sub {
     text-align: center;
     font-size: 1.1rem;
-    color: #6c757d;
+    color: var(--muted);
     max-width: 640px;
     margin: 0 auto 3rem;
 }
@@ -1970,7 +1867,7 @@ html {
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #495057;
+    color: var(--text);
     max-width: 720px;
     margin: 3rem auto 0;
 }
@@ -1991,8 +1888,8 @@ html {
     margin: 0 auto;
     background-color: white;
     border-radius: 15px;
-    border-left: 5px solid #e91e63;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--pink);
+    box-shadow: 0 5px 20px rgba(29, 50, 80, 0.08);
     padding: 1rem 2.5rem;
 }
 
@@ -2001,7 +1898,7 @@ html {
     grid-template-columns: 170px 1fr;
     gap: 1.5rem;
     padding: 1.5rem 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--line);
 }
 
 .su-example-row:last-child {
@@ -2013,14 +1910,14 @@ html {
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #c2185b;
+    color: var(--pink-deep);
     padding-top: 0.25rem;
 }
 
 .su-example-row p {
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #495057;
+    color: var(--text);
 }
 
 .su-pricing {
@@ -2035,8 +1932,8 @@ html {
 .su-price-card {
     background-color: white;
     border-radius: 15px;
-    border-top: 5px solid #e91e63;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--pink);
+    box-shadow: 0 5px 20px rgba(29, 50, 80, 0.08);
     padding: 2.5rem;
 }
 
@@ -2045,7 +1942,7 @@ html {
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #c2185b;
+    color: var(--pink-deep);
 }
 
 .su-price {
@@ -2058,14 +1955,14 @@ html {
 .su-price-amount {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--navy);
     line-height: 1;
 }
 
 .su-price-unit {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #6c757d;
+    color: var(--muted);
 }
 
 .su-price-card .terapia-lista {
@@ -2093,19 +1990,19 @@ html {
     gap: 1.5rem;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(29, 50, 80, 0.08);
     padding: 2rem;
 }
 
 .su-modalidad h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
     margin-bottom: 0.5rem;
 }
 
 .su-modalidad p {
-    color: #495057;
+    color: var(--text);
     line-height: 1.7;
 }
 
@@ -2114,7 +2011,7 @@ html {
     align-items: center;
     gap: 0.4rem;
     margin-top: 0.75rem;
-    color: #c2185b;
+    color: var(--pink-deep);
     font-weight: 600;
     text-decoration: none;
 }
@@ -2132,7 +2029,7 @@ html {
 }
 
 .su-fit-col {
-    background-color: #f8f9fa;
+    background-color: var(--cream-light);
     border-radius: 15px;
     padding: 2.5rem;
 }
@@ -2140,7 +2037,7 @@ html {
 .su-fit-col h3 {
     font-size: 1.35rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--navy);
 }
 
 .su-fit-list {
@@ -2151,7 +2048,7 @@ html {
 .su-fit-list li {
     position: relative;
     padding: 1rem 0 1rem 2rem;
-    color: #495057;
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -2159,12 +2056,12 @@ html {
     content: '→';
     position: absolute;
     left: 0;
-    color: #6c757d;
+    color: var(--muted);
     font-weight: bold;
 }
 
 .su-fit-list a {
-    color: #c2185b;
+    color: var(--pink-deep);
     font-weight: 600;
 }
 
@@ -2186,7 +2083,7 @@ details.faq-item .faq-answer {
 }
 
 details.faq-item > summary:focus-visible {
-    outline: 2px solid #e91e63;
+    outline: 2px solid var(--pink);
     outline-offset: -2px;
 }
 
@@ -2219,7 +2116,7 @@ details.faq-item > summary:focus-visible {
     gap: 2.5rem;
     align-items: center;
     background: linear-gradient(135deg, #fdf2f6 0%, #fffaf0 100%);
-    border: 1px solid #f8bbd9;
+    border: 1px solid var(--pink-soft);
     border-radius: 15px;
     padding: 2.5rem 3rem;
 }
@@ -2227,7 +2124,7 @@ details.faq-item > summary:focus-visible {
 .su-announce-card h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--navy);
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -2235,7 +2132,7 @@ details.faq-item > summary:focus-visible {
 .su-announce-card p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #495057;
+    color: var(--text);
     max-width: 640px;
     margin-bottom: 1.25rem;
 }
@@ -2253,11 +2150,11 @@ details.faq-item > summary:focus-visible {
     gap: 0.5rem;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #2c3e50;
+    color: var(--navy);
 }
 
 .su-announce-facts i {
-    color: #e91e63;
+    color: var(--pink);
 }
 
 @media (max-width: 768px) {
@@ -2375,7 +2272,7 @@ details.faq-item > summary:focus-visible {
 }
 
 .faq-answer a {
-    color: #c2185b;
+    color: var(--pink-deep);
 }
 
 /* Menú: el menú completo no cabe en tablet.
@@ -2406,12 +2303,12 @@ details.faq-item > summary:focus-visible {
         left: 0;
         right: 0;
         background: #ffffff;
-        border-top: 1px solid #e9ecef;
+        border-top: 1px solid var(--line);
         display: none;
         flex-direction: column;
         gap: 0;
         padding: 0.5rem 1rem 1rem;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        box-shadow: 0 8px 20px rgba(29, 50, 80, 0.08);
     }
 
     .nav-menu.active {
@@ -2456,7 +2353,7 @@ details.faq-item > summary:focus-visible {
     .nav-menu .dropdown-menu a {
         display: block;
         padding: 0.5rem 0 0.5rem 1rem;
-        border-bottom: 1px solid #e9ecef;
+        border-bottom: 1px solid var(--line);
     }
 }
 
@@ -2483,7 +2380,7 @@ details.faq-item > summary:focus-visible {
 }
 
 .info-item a:hover {
-    color: #e91e63;
+    color: var(--pink);
 }
 
 button.dot {
@@ -2494,7 +2391,7 @@ button.dot {
 .dot:focus-visible,
 .carousel-btn:focus-visible,
 .carousel-container:focus-visible {
-    outline: 2px solid #e91e63;
+    outline: 2px solid var(--pink);
     outline-offset: 3px;
 }
 
@@ -2517,5 +2414,555 @@ button.dot {
 
     .whatsapp-link {
         animation: none;
+    }
+}
+
+/* ==========================================================================
+   Lavado de cara (rama lavado-de-cara)
+   Misma estructura y contenido. Tipografías y paleta de la tarjeta V3
+   «Acompañar»: Fraunces + Figtree, crema, azul de marca y línea rosa.
+   ========================================================================== */
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+.hero-title,
+.logo-text .logo-title,
+.footer-logo h3,
+.card h3,
+.formacion-content h3,
+.profile-name,
+.su-modalidad h3,
+.su-fit-col h3,
+.su-price-amount {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    color: var(--navy);
+}
+
+.hero-title,
+.terapia-title h1,
+.terapia-title h2,
+.terapia-text h2,
+.situaciones-comunes h2,
+.sobre-text h2,
+.formacion-academica h2,
+.consulta-photos h2,
+.contact h2,
+.su-hero h1,
+.su-section h2,
+.su-announce-card h2 {
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+}
+
+.card h3,
+.formacion-content h3,
+.profile-name,
+.su-modalidad h3,
+.su-fit-col h3,
+.su-price-amount {
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+
+/* Cabecera */
+.header {
+    background-color: rgba(250, 247, 242, 0.9);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    backdrop-filter: saturate(140%) blur(12px);
+    box-shadow: none;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.is-scrolled {
+    background-color: rgba(250, 247, 242, 0.97);
+    border-bottom-color: var(--line);
+    box-shadow: 0 10px 30px rgba(29, 50, 80, 0.06);
+}
+
+.logo-text .logo-title {
+    font-weight: 500;
+    font-size: 1.65rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+}
+
+.logo-text p {
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--navy);
+}
+
+.nav-link:hover,
+.dropdown-menu a:hover {
+    color: var(--pink-deep);
+}
+
+.btn-contacto {
+    border-radius: 999px;
+    padding: 0.7rem 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.btn-contacto:hover {
+    background-color: var(--pink-deep);
+}
+
+.dropdown-menu {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.4rem;
+    box-shadow: 0 18px 40px rgba(29, 50, 80, 0.1);
+}
+
+.dropdown-menu a {
+    border-radius: 8px;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--cream-light);
+}
+
+/* Portada: velo crema para leer mejor y ola con línea rosa al pie */
+.hero-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(250, 247, 242, 0.85) 0%, rgba(250, 247, 242, 0.5) 40%, rgba(250, 247, 242, 0) 72%);
+}
+
+.hero-title {
+    font-size: clamp(2.8rem, 6vw, 4.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--navy);
+    margin-bottom: 2.25rem;
+}
+
+.hero-subtitle strong {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.hero::after,
+.su-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: clamp(44px, 7vw, 96px);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 70 C 240 112 520 112 760 78 C 1000 44 1230 26 1440 40 L1440 120 L0 120 Z' fill='%23FAF7F2'/%3E%3Cpath d='M0 58 C 240 100 520 100 760 66 C 1000 32 1230 14 1440 28' fill='none' stroke='%23EC9DBC' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.su-hero {
+    position: relative;
+    padding-bottom: 7rem;
+}
+
+.su-hero::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 70 C 240 112 520 112 760 78 C 1000 44 1230 26 1440 40 L1440 120 L0 120 Z' fill='%23FFFFFF'/%3E%3Cpath d='M0 58 C 240 100 520 100 760 66 C 1000 32 1230 14 1440 28' fill='none' stroke='%23EC9DBC' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+}
+
+.info-bar {
+    border-top: none;
+    padding: 1.75rem 0 2.5rem;
+}
+
+.info-item {
+    font-weight: 500;
+    color: var(--navy);
+}
+
+.info-item i {
+    font-size: 1.25rem;
+    color: var(--pink);
+}
+
+/* Secciones y texto */
+.terapia-title::before {
+    width: 56px;
+    height: 2px;
+    top: -26px;
+    background: var(--pink-line);
+}
+
+.terapia-title h1,
+.terapia-title h2 {
+    font-size: 3.2rem;
+}
+
+.terapia-text,
+.terapia-text p,
+.sobre-text p {
+    text-align: left;
+}
+
+.terapia-text p,
+.sobre-text p {
+    font-size: 1.075rem;
+    line-height: 1.85;
+    color: var(--text);
+}
+
+.terapia-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.situaciones-comunes h2,
+.formacion-academica h2,
+.consulta-photos h2,
+.contact h2,
+.sobre-text h2 {
+    font-size: 2.5rem;
+}
+
+/* Tarjetas: borde fino y sombra suave en lugar de sombras marcadas */
+.card,
+.formacion-item,
+.faq-item,
+.su-price-card,
+.su-modalidad,
+.su-example {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.card:hover,
+.formacion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.faq-item:hover {
+    transform: none;
+    box-shadow: var(--shadow-hover);
+}
+
+.su-example {
+    border-left: 3px solid var(--pink-line);
+}
+
+.su-price-card {
+    border-top: 3px solid var(--pink);
+}
+
+.card h3 {
+    font-size: 1.45rem;
+    line-height: 1.25;
+}
+
+.card-icon,
+.formacion-icon {
+    background: var(--pink-tint);
+}
+
+.card-icon i,
+.formacion-icon i {
+    color: var(--pink-deep);
+}
+
+.su-step-number {
+    color: var(--pink-deep);
+    font-family: var(--font-serif);
+    font-weight: 500;
+}
+
+.card ul li::before,
+.terapia-lista li::before {
+    color: var(--pink);
+}
+
+/* Botones */
+.btn-primary {
+    border-radius: 999px;
+    padding: 1rem 2.1rem;
+    font-weight: 600;
+    font-size: 1.02rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 10px 24px rgba(29, 50, 80, 0.16);
+}
+
+.btn-primary:hover {
+    background-color: var(--navy-soft);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(29, 50, 80, 0.22);
+}
+
+/* Cita */
+.cita-section {
+    background: var(--cream);
+    padding: 5rem 0;
+}
+
+.cita-icon {
+    font-size: 1.8rem;
+    color: var(--pink-line);
+    opacity: 1;
+}
+
+.cita-text {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    line-height: 1.65;
+    color: var(--navy);
+}
+
+.cita-text p:last-child {
+    color: var(--pink-deep);
+    font-weight: 500;
+}
+
+.cita-author {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Fotos */
+.profile-image {
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(29, 50, 80, 0.16);
+}
+
+.profile-name {
+    font-size: 1.3rem;
+}
+
+.profile-specialty {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text);
+}
+
+.terapia-image img {
+    border-radius: var(--radius);
+}
+
+.carousel-wrapper {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.carousel-btn {
+    border: 1px solid var(--line);
+    box-shadow: 0 6px 18px rgba(29, 50, 80, 0.1);
+}
+
+.dot {
+    background: var(--line-strong);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 6px;
+    background: var(--navy);
+    transform: none;
+}
+
+.dot:hover {
+    background: var(--navy);
+    opacity: 0.6;
+}
+
+/* Navegación de secciones (páginas de terapia) */
+.section-nav {
+    background-color: rgba(250, 247, 242, 0.92);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+    border-color: var(--line);
+}
+
+.section-nav-item {
+    border-radius: 999px;
+    border-color: var(--line);
+    box-shadow: none;
+    padding: 0.5rem 1.05rem;
+}
+
+.section-nav-item i {
+    color: var(--pink);
+}
+
+.section-nav-item:hover {
+    color: var(--pink-deep);
+    border-color: var(--pink-soft);
+    transform: none;
+}
+
+.section-nav-item:hover i {
+    color: var(--pink-deep);
+}
+
+/* Preguntas frecuentes */
+.faq-question {
+    background-color: #ffffff;
+}
+
+.faq-question:hover {
+    background-color: var(--cream-light);
+}
+
+/* Sesión única */
+.su-hero h1 span {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+/* Pie: ola con línea rosa y textos en blanco suave */
+.footer {
+    position: relative;
+    padding-top: 3.5rem;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(100% - 1px);
+    height: clamp(44px, 6vw, 80px);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cg transform='scale%28-1 1%29 translate%28-1440 0%29'%3E%3Cpath d='M0 70 C 240 112 520 112 760 78 C 1000 44 1230 26 1440 40 L1440 120 L0 120 Z' fill='%231D3250'/%3E%3Cpath d='M0 58 C 240 100 520 100 760 66 C 1000 32 1230 14 1440 28' fill='none' stroke='%23EC9DBC' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/g%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+    pointer-events: none;
+}
+
+.footer-logo h3 {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.footer-logo p,
+.footer-bottom {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.designer-credit {
+    color: rgba(255, 255, 255, 0.55);
+    border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.designer-credit i,
+.designer-link {
+    color: var(--pink-soft);
+}
+
+.designer-link:hover {
+    color: #ffffff;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-link:hover,
+.footer-social .social-icon:hover {
+    color: var(--pink-soft);
+}
+
+.whatsapp-link {
+    animation: none;
+    box-shadow: 0 10px 28px rgba(18, 140, 126, 0.35);
+}
+
+@media (max-width: 1024px) {
+    .nav-menu {
+        background: var(--cream-light);
+        border-top-color: var(--line);
+    }
+
+    .nav-menu .dropdown-menu {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .nav-menu .dropdown-menu a {
+        border-radius: 0;
+        border-bottom-color: var(--line);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-background::after {
+        background: linear-gradient(180deg, rgba(250, 247, 242, 0.55) 0%, rgba(250, 247, 242, 0.4) 55%, rgba(250, 247, 242, 0.7) 100%);
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .terapia-title h1,
+    .terapia-title h2 {
+        font-size: 2.35rem;
+    }
+
+    .situaciones-comunes h2,
+    .formacion-academica h2,
+    .consulta-photos h2,
+    .contact h2,
+    .sobre-text h2,
+    .terapia-text h2 {
+        font-size: 2.1rem;
+    }
+
+    .cita-text {
+        font-size: 1.2rem;
+    }
+
+    .su-hero {
+        padding-bottom: 5.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terapia-title h1,
+    .terapia-title h2 {
+        font-size: 2.1rem;
+    }
+
+    .situaciones-comunes h2,
+    .formacion-academica h2,
+    .consulta-photos h2,
+    .contact h2,
+    .sobre-text h2,
+    .terapia-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .cita-text {
+        font-size: 1.1rem;
     }
 }
