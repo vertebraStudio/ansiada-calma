@@ -3352,3 +3352,82 @@ h2,
         display: none;
     }
 }
+
+/* Datos de la portada y de las terapias: rejilla de 2 × 2 en móvil en lugar de lista vertical */
+@media (max-width: 768px) {
+    .info-bar {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .info-items {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.4rem 1rem;
+    }
+
+    .info-item {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.45rem;
+        font-size: 0.92rem;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .info-item i {
+        font-size: 1.15rem;
+    }
+}
+
+/* Menú móvil: se despliega hacia abajo y la hamburguesa pasa a ser una X */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: flex;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        clip-path: inset(0 -40px 100% -40px);
+        max-height: calc(100vh - 56px);
+        overflow-y: auto;
+        transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, visibility 0s linear 0.45s;
+    }
+
+    .nav-menu.active {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        clip-path: inset(0 -40px -40px -40px);
+        transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, visibility 0s;
+    }
+
+    .nav-menu .dropdown.active .dropdown-menu {
+        animation: submenu-in 0.3s ease both;
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .fa-bars::before {
+        content: "\f00d";
+    }
+}
+
+@keyframes submenu-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .nav-menu.active {
+        transition: none;
+    }
+
+    .nav-menu .dropdown.active .dropdown-menu {
+        animation: none;
+    }
+}
+
