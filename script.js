@@ -1,46 +1,49 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for all anchor links
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
+    // Desplazamiento a secciones: arranca al momento y frena con suavidad (easeOutQuart).
+    // Descuenta la cabecera compacta y, en las páginas de terapia, la barra de secciones.
+    const reduceScrollMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let scrollFrame = null;
+    const cancelScroll = () => cancelAnimationFrame(scrollFrame);
+    ['wheel', 'touchstart', 'keydown'].forEach(evt => window.addEventListener(evt, cancelScroll, { passive: true }));
+
+    function scrollToSection(target) {
+        const sectionNav = document.querySelector('.section-nav');
+        const offset = 64 + (sectionNav ? sectionNav.offsetHeight : 0);
+        const end = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
+        const start = window.scrollY;
+        const distance = end - start;
+        if (reduceScrollMotion || Math.abs(distance) < 2) {
+            window.scrollTo(0, end);
+            return;
+        }
+        const duration = Math.min(850, Math.max(450, Math.abs(distance) * 0.3));
+        const startTime = performance.now();
+        const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+        cancelScroll();
+        const step = now => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            window.scrollTo(0, start + distance * easeOutQuart(progress));
+            if (progress < 1) {
+                scrollFrame = requestAnimationFrame(step);
+            }
+        };
+        scrollFrame = requestAnimationFrame(step);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             // Ignore placeholder hashes to avoid errors and let other handlers run
             if (!targetId || targetId === '#') {
                 return;
             }
-            e.preventDefault();
-            
             const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight;
-                
-                // Smooth scroll with easing
-                const startPosition = window.pageYOffset;
-                const distance = targetPosition - startPosition;
-                const duration = 1000; // 1 second
-                let start = null;
-                
-                function animation(currentTime) {
-                    if (start === null) start = currentTime;
-                    const timeElapsed = currentTime - start;
-                    const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-                    window.scrollTo(0, run);
-                    if (timeElapsed < duration) requestAnimationFrame(animation);
-                }
-                
-                function easeInOutCubic(t, b, c, d) {
-                    t /= d / 2;
-                    if (t < 1) return c / 2 * t * t * t + b;
-                    t -= 2;
-                    return c / 2 * (t * t * t + 2) + b;
-                }
-                
-                requestAnimationFrame(animation);
+            if (!targetSection) {
+                return;
             }
+            e.preventDefault();
+            scrollToSection(targetSection);
         });
     });
 
@@ -117,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     animatedElements.forEach(el => {
         if (prefersReducedMotion) return;
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(el);
     });
 
