@@ -1543,23 +1543,11 @@ section[id] {
 
 /* Opositores page specific styles */
 
-.opositores-page .section-nav-container {
-    justify-content: center !important;
-}
 
-.pareja-page .section-nav-container {
-    justify-content: center !important;
-}
 
-.ansiedad-page .section-nav-container {
-    justify-content: center !important;
-}
 
 /* Adolescentes page specific styles */
 
-.adolescentes-page .section-nav-container {
-    justify-content: center !important;
-}
 
 /* Pareja page specific styles - targeting by section ID */
 
@@ -2971,7 +2959,6 @@ h2,
 /* La barra de secciones se pega justo debajo de la cabecera, mida lo que mida */
 .section-nav {
     top: var(--header-h, 80px);
-    transition: top 0.3s ease;
 }
 
 .designer-credit {
@@ -3324,5 +3311,44 @@ h2,
     .footer-bottom {
         flex-direction: column-reverse;
         align-items: flex-start;
+    }
+}
+
+/* Barra de secciones (páginas de terapia): más baja, pestañas centradas y unida a la cabecera.
+   Los márgenes automáticos centran cuando sobra espacio y, si no caben, se puede desplazar desde la primera */
+.section-nav {
+    padding: 0.5rem 0;
+    border-top: none;
+    background-color: rgba(250, 247, 242, 0.97);
+}
+
+.section-nav-container {
+    padding: 0.25rem 0;
+}
+
+.section-nav-item:first-child {
+    margin-left: auto;
+}
+
+.section-nav-item:last-child {
+    margin-right: auto;
+}
+
+.header.is-scrolled:has(+ .section-nav) {
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+.header.is-scrolled + .section-nav {
+    box-shadow: 0 10px 30px rgba(29, 50, 80, 0.06);
+}
+
+@media (max-width: 768px) {
+    .section-nav-container {
+        scrollbar-width: none;
+    }
+
+    .section-nav-container::-webkit-scrollbar {
+        display: none;
     }
 }
