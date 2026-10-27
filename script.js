@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.backgroundColor = '#f8f9fa';
             header.style.backdropFilter = 'none';
         }
-    });
+    }, { passive: true });
 
     // Form submission handling
     const contactForm = document.querySelector('.contact-form');
@@ -125,7 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
          // Observe elements for animation
      const animatedElements = document.querySelectorAll('.card, .terapia-text, .sobre-text, .contact-info, .formacion-item');
     
+    // Sin animación de entrada si el usuario prefiere menos movimiento
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     animatedElements.forEach(el => {
+        if (prefersReducedMotion) return;
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -146,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.addEventListener('click', function(e) {
             const anchor = e.target.closest('a');
             if (!anchor) return;
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const isMobile = window.matchMedia('(max-width: 1024px)').matches;
             const isDropdownToggle = !!anchor.closest('.dropdown') && (!anchor.getAttribute('href') || anchor.getAttribute('href') === '#');
             if (isMobile && isDropdownToggle) {
                 // Let dropdown click handler manage opening; do not close entire menu
@@ -175,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const link = item.querySelector('.nav-link');
         
         link.addEventListener('click', function(e) {
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const isMobile = window.matchMedia('(max-width: 1024px)').matches;
             const href = this.getAttribute('href');
             
             // En escritorio, no interferir con hover; en móvil, abrir por click
@@ -207,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close dropdowns when clicking outside (solo en móvil)
     document.addEventListener('click', function(e) {
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        const isMobile = window.matchMedia('(max-width: 1024px)').matches;
         if (isMobile && !e.target.closest('.dropdown')) {
             dropdownItems.forEach(item => {
                 item.classList.remove('active');
@@ -273,10 +277,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })();
 
-         // Add loading animation
-     window.addEventListener('load', function() {
-         document.body.classList.add('loaded');
-     });
+    // Año actual en el pie
+    document.querySelectorAll('[data-current-year]').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
  });
 
 // Utility functions
@@ -374,74 +378,6 @@ notificationStyles.textContent = `
         flex: 1;
     }
     
-    /* Loading animation */
-    body:not(.loaded) {
-        overflow: hidden;
-    }
-    
-    body:not(.loaded)::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #f8f9fa;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    body:not(.loaded)::after {
-        content: 'Ansiada Calma';
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: 600;
-        color: #2c3e50;
-        z-index: 10000;
-    }
-    
-    /* Dropdown styles */
-    .dropdown {
-        position: relative;
-    }
-    
-    .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        padding: 0.5rem 0;
-        min-width: 200px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-    }
-    
-    .dropdown.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    
-    .dropdown-menu a {
-        display: block;
-        padding: 0.75rem 1rem;
-        color: #2c3e50;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
-    
-    .dropdown-menu a:hover {
-        background-color: #f8f9fa;
-    }
 `;
 
 // Consulta Photos Carousel Functionality
@@ -463,6 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update dots
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
+            dot.setAttribute('aria-current', index === currentSlide);
         });
     }
     
@@ -488,10 +425,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Auto-play (optional)
+    // Auto-play: se pausa con el ratón o el foco encima y no arranca si el usuario prefiere menos movimiento
     let autoPlayInterval;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     function startAutoPlay() {
+        if (reduceMotion) return;
+        clearInterval(autoPlayInterval);
         autoPlayInterval = setInterval(nextSlide, 5000);
     }
     
@@ -502,21 +442,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start auto-play
     startAutoPlay();
     
-    // Pause auto-play on hover
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
-    if (carouselWrapper) {
-        carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
-        carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+        carouselContainer.addEventListener('focusin', stopAutoPlay);
+        carouselContainer.addEventListener('focusout', startAutoPlay);
+        
+        // Keyboard navigation (solo con el foco dentro del carrusel)
+        carouselContainer.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
     }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-        }
-    });
 });
 
 document.head.appendChild(notificationStyles); 
