@@ -1,3 +1,14 @@
+// Cada página empieza arriba: el navegador no restaura la posición al recargar ni al volver atrás
+// (los enlaces a una sección, como index.html#sobre-mi, siguen llevando a esa sección)
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted && !location.hash) {
+        window.scrollTo(0, 0);
+    }
+});
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
     // Desplazamiento a secciones: arranca al momento y frena con suavidad (easeOutQuart).

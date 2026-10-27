@@ -3431,3 +3431,30 @@ h2,
     }
 }
 
+/* Sobre mí y «Mi enfoque»: foto alineada arriba y fija mientras se lee en escritorio; a todo el ancho en móvil */
+.sobre-content {
+    align-items: start;
+}
+
+@media (min-width: 769px) {
+    .sobre-image {
+        position: sticky;
+        top: calc(var(--header-h, 80px) + 84px);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 20px;
+        margin: 0 0 2rem;
+        box-shadow: 0 14px 34px rgba(29, 50, 80, 0.12);
+    }
+
+    .sobre-text h2 {
+        margin-bottom: 1.5rem;
+    }
+}
+
