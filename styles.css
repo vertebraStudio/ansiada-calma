@@ -3677,3 +3677,42 @@ h2,
         transition: none;
     }
 }
+
+/* Cabecera de escritorio en tres columnas: logo, pestañas centradas e Instagram + Contacto a la derecha */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1025px) {
+    .header-content {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        column-gap: 1.5rem;
+    }
+
+    .logo {
+        justify-self: start;
+    }
+
+    /* Si falta sitio (≈1025–1085 px) el menú se aparta un poco del centro antes que partir el logo */
+    .logo-text {
+        white-space: nowrap;
+    }
+
+    .nav {
+        justify-self: center;
+    }
+
+    .header-actions {
+        justify-self: end;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-actions {
+        display: none;
+    }
+}
