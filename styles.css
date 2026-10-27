@@ -175,7 +175,6 @@ body {
      right: 0;
      bottom: 0;
      background: url('media/web/fondo.jpg') center/cover no-repeat;
-     transform: none !important; /* ensure no JS transform moves it */
  }
 
  .hero-content {
@@ -1688,17 +1687,6 @@ html {
 }
 
 /* Sesión única: página propia, enlace del menú y anuncio en inicio */
-.nav-badge {
-    background-color: var(--pink);
-    color: white;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.45rem;
-    border-radius: 10px;
-    line-height: 1.3;
-}
 
 .su-eyebrow {
     display: inline-block;
@@ -1819,7 +1807,6 @@ html {
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: 30% 50%;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(29, 50, 80, 0.15);
 }
@@ -2193,9 +2180,6 @@ details.faq-item > summary:focus-visible {
         width: 100%;
     }
 
-    .su-hero-image img {
-        aspect-ratio: 4 / 3;
-    }
 
     .sesion-unica-page .terapia-breve {
         padding-top: 5rem;
@@ -2283,9 +2267,6 @@ details.faq-item > summary:focus-visible {
         gap: 1rem;
     }
 
-    .nav-badge {
-        display: none;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -2540,12 +2521,6 @@ h2,
 }
 
 /* Portada: velo crema para leer mejor y ola con línea rosa al pie */
-.hero-background::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(250, 247, 242, 0.85) 0%, rgba(250, 247, 242, 0.5) 40%, rgba(250, 247, 242, 0) 72%);
-}
 
 .hero-title {
     font-size: clamp(2.8rem, 6vw, 4.75rem);
@@ -2565,6 +2540,7 @@ h2,
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 500;
+    color: var(--pink-deep);
 }
 
 .hero::after,
@@ -2874,14 +2850,6 @@ h2,
     border-top-color: rgba(255, 255, 255, 0.12);
 }
 
-.designer-credit i,
-.designer-link {
-    color: var(--pink-soft);
-}
-
-.designer-link:hover {
-    color: #ffffff;
-}
 
 .footer-link {
     color: rgba(255, 255, 255, 0.55);
@@ -2916,9 +2884,6 @@ h2,
 }
 
 @media (max-width: 768px) {
-    .hero-background::after {
-        background: linear-gradient(180deg, rgba(250, 247, 242, 0.55) 0%, rgba(250, 247, 242, 0.4) 55%, rgba(250, 247, 242, 0.7) 100%);
-    }
 
     .hero-subtitle {
         font-size: 1.15rem;
@@ -2965,4 +2930,105 @@ h2,
     .cita-text {
         font-size: 1.1rem;
     }
+}
+
+/* Segunda ronda: parallax de la portada, cabecera compacta al hacer scroll y crédito de Vertebra */
+.hero-background {
+    will-change: transform;
+}
+
+.header {
+    transition: padding 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img {
+    transition: height 0.3s ease;
+}
+
+.logo-text .logo-title {
+    transition: font-size 0.3s ease, margin 0.3s ease;
+}
+
+.logo-text p {
+    max-height: 2em;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.header.is-scrolled {
+    padding: 0.45rem 0;
+}
+
+.header.is-scrolled .logo-img {
+    height: 38px;
+}
+
+.header.is-scrolled .logo-text .logo-title {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.header.is-scrolled .logo-text p {
+    max-height: 0;
+    opacity: 0;
+}
+
+.header.is-scrolled .btn-contacto {
+    padding: 0.5rem 1.2rem;
+}
+
+/* La barra de secciones se pega justo debajo de la cabecera, mida lo que mida */
+.section-nav {
+    top: var(--header-h, 80px);
+    transition: top 0.3s ease;
+}
+
+.designer-credit {
+    padding-top: 1.5rem;
+}
+
+.vertebra-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.vertebra-credit:hover {
+    color: #ffffff;
+}
+
+.vertebra-credit-logo {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    background-color: currentColor;
+    -webkit-mask: url('media/vertebra-studio.png') center / contain no-repeat;
+    mask: url('media/vertebra-studio.png') center / contain no-repeat;
+}
+
+.vertebra-credit-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.25;
+}
+
+.vertebra-credit-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.vertebra-credit-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease;
+}
+
+.vertebra-credit:hover .vertebra-credit-name {
+    color: #ffffff;
 }

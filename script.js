@@ -47,9 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header background change on scroll
     const header = document.querySelector('.header');
     
-    const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
+    const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
     window.addEventListener('scroll', updateHeader, { passive: true });
     updateHeader();
+
+    // Altura real de la cabecera (cambia al encogerse) para pegar la barra de secciones justo debajo
+    const syncHeaderHeight = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+    if ('ResizeObserver' in window) {
+        new ResizeObserver(syncHeaderHeight).observe(header);
+    }
+    syncHeaderHeight();
 
     // Form submission handling
     const contactForm = document.querySelector('.contact-form');
@@ -198,11 +205,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Disabled parallax effect to keep hero background fixed relative to content
+    // Parallax sutil del fondo de la portada (no se aplica si el usuario prefiere menos movimiento)
     const hero = document.querySelector('.hero');
     const heroBackground = document.querySelector('.hero-background');
-    if (hero && heroBackground) {
-        heroBackground.style.transform = 'none';
+    if (hero && heroBackground && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let parallaxQueued = false;
+        const updateParallax = () => {
+            const y = Math.min(window.scrollY, hero.offsetHeight);
+            heroBackground.style.transform = `translate3d(0, ${(y * 0.25).toFixed(1)}px, 0)`;
+            parallaxQueued = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (!parallaxQueued) {
+                parallaxQueued = true;
+                requestAnimationFrame(updateParallax);
+            }
+        }, { passive: true });
+        updateParallax();
     }
 
     // Move Sobre Mí image under H2 on mobile, restore on desktop
